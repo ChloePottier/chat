@@ -27,7 +27,8 @@ try {
                 <h1>Chat en ligne</h1>
             </div>
             <div class="zone-chat">
-                <?php $sqlChat ="SELECT * FROM discussion WHERE id = 1;";
+                <?php $sqlChat ="SELECT * FROM discussion";
+                // $sqlChat ="SELECT * FROM discussion WHERE id = 1;";
                         $reqChat = $dbh->query($sqlChat);
                         while($resChat=$reqChat->fetch(PDO::FETCH_ASSOC)){
                     ?>
@@ -37,25 +38,25 @@ try {
                     <p class="affichage-question float-left d-fle">
                         <!-- Questions : via BDD -->
                         <?php
+                        // print_r($resChat);
                             echo $resChat['question'];
                             echo" <br /></p>                        
                                 <div class='clear'></div> 
                                 </div>";
                         };//fin de la boucle
             ?> 
-                <div class="reponse-visiteur d-flex" id="rep-visiteur">
+                <div class="reponse-visiteur d-flex" >
                     <img src="img-visiteur.png" alt="miniature" width="30" height="30">    
-                    <p class="affichage-reponse">
+                    <p class="affichage-reponse" id="rep-visiteur">
                             <?php
                             include 'functions.php';
-                            echo $GLOBALS['reponse-visiteur'];
                             ?>
                     </p>  
                 </div>
             </div>
             <div class="input-visiteur">
                     <form action="" method="GET">
-                        <input type="text" name="reponse-visiteur" placeholder="votre réponse">
+                        <input type="text" name="reponseVisiteur" placeholder="votre réponse">
                         <button type="submit" onclick="reponseVisiteur()">Envoyer</button>
                     </form>
                     <div class="clear"></div>

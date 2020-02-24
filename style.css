@@ -1,2 +1,12 @@
+body{font-family: Arial, Helvetica, sans-serif;}
 .container-fluid{width: 100%;}
-.container{width: 60%; height: 100vh; margin-left: auto; margin-right: auto; border-radius: .3rem; background: #4fa0eb;}
+.container{width: 60%; height: 100vh; margin-left: auto; margin-right: auto; border-radius: .3rem; background: #5fc6cd; overflow: hidden;}
+img{padding: .3rem;}
+.d-flex{display: flex;}
+h1{color: white; text-align: center; margin: auto;}
+.header-container{box-shadow: 0 5px 5px #1e4548; z-index: 1000;}
+.zone-chat{background: #fff; height: 75%; border-left: solid 1px #5fc6cd;  border-right: solid 1px #5fc6cd;}
+.reponse-visiteur{float: right; width:50%; border-radius: .3rem; background: #5fc6cd;}
+.input-visiteur{float: right;}
+form{float:right; padding-top: 10px;}
+.clear{clear:both; }

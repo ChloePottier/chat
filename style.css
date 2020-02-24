@@ -6,8 +6,8 @@ img{padding: .3rem;}
 .flex-row{flex-direction: row;}
 h1{color: white; text-align: center; margin: auto;}
 .header-container{box-shadow: 0 5px 5px #1e4548; z-index: 1000;}
-.zone-chat{background: #fff; height: 75%; border-left: solid 1px #5fc6cd;  border-right: solid 1px #5fc6cd;}
-.reponse-visiteur{float: right; width:50%; border-radius: .3rem; background: #5fc6cd;}
+.zone-chat{background: #fff; height: 75%; border-left: solid 1px #5fc6cd;  border-right: solid 1px #5fc6cd; overflow:auto;}
+.reponse-visiteur{float: right; width:50%; border-radius: .3rem; background: #5fc6cd;  margin-top: 5px; margin-bottom: 5px;}
 .input-visiteur{float: right;}
 form{float:right; padding-top: 10px;}
 .clear{clear:both; }

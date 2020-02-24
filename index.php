@@ -10,9 +10,27 @@
 <body>
     <div class="container-fluid">
         <div class="container">
-            <div class="header-container">
-                <img src="" alt="img-chloe">
+            <div class="header-container d-flex">
+                <img src="img-chloe.png" alt="img-chloe" class="" width="60" height="60">
+                <h1>Chat en ligne</h1>
             </div>
+            <div class="zone-chat">
+                <div class="question d-flex">
+                    <img src="img-chloe2.png" alt="miniature" width="30" height="30">    
+                    <p class="affichage-question"></p>  
+                </div>
+                <div class="reponse-visiteur d-flex">
+                    <img src="img-visiteur.png" alt="miniature" width="30" height="30">    
+                    <p class="affichage-reponse"></p>  
+                </div>
+            </div>
+            <div class="input-visiteur">
+                    <form action="" method="post">
+                        <input type="text" placeholder="votre réponse">
+                        <button type="submit">Envoyer</button>
+                    </form>
+                    <div class="clear"></div>
+             </div>
         </div>
     </div>
 </body>

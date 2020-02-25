@@ -4,7 +4,9 @@ body{font-family: Arial, Helvetica, sans-serif;}
 img{padding: .3rem;}
 .d-flex{display: flex;}
 .flex-row{flex-direction: row;}
+.align-items-end{align-items : flex-end;}
 h1{color: white; text-align: center; margin: auto;}
+h3,p{margin:0;}
 .header-container{box-shadow: 0 5px 5px #1e4548; z-index: 1000;}
 .zone-chat{background: #fff; height: 75%; border-left: solid 1px #5fc6cd;  border-right: solid 1px #5fc6cd; overflow:auto;}
 .reponse-visiteur{float: right; width:50%; border-radius: .3rem; background: #5fc6cd;  margin-top: 5px; margin-bottom: 5px;}
@@ -13,3 +15,6 @@ form{float:right; padding-top: 10px;}
 .clear{clear:both; }
 .float-left{float: left;}
 .float-right{float: right;}
+.my-auto{margin-top:auto; }
+.date-heure{padding-left: 0.3rem; font-size: .8rem;}
+.message{padding-left: 3rem;}

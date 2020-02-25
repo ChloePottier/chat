@@ -23,30 +23,35 @@ try {
     <div class="container-fluid">
         <div class="container">
             <div class="header-container d-flex">
-                <img src="img-chloe.png" alt="img-chloe" class="" width="60" height="60">
+                <!-- <img src="img-chloe.png" alt="img-chloe" class="" width="60" height="60"> -->
                 <h1>Chat en ligne</h1>
             </div>
             <div class="zone-chat">
-                <?php $sqlChat ="SELECT * FROM discussion";
+                <?php $sqlChat ="SELECT * FROM message 
+                INNER JOIN user
+                ON message.id_user = user.id
+                ORDER BY message.id_message";
                 // $sqlChat ="SELECT * FROM discussion WHERE id = 1;";
                         $reqChat = $dbh->query($sqlChat);
                         while($resChat=$reqChat->fetch(PDO::FETCH_ASSOC)){
                     ?>
                 <div class="question" id="question">
                    
-                    <img src="img-chloe2.png" alt="miniature" width="30" height="30" class="float-left">    
-                    <p class="affichage-question float-left d-fle">
+                    
+                    <div class="affichage-question ">
                         <!-- Questions : via BDD -->
                         <?php
                         // print_r($resChat);
-                            echo $resChat['question'];
-                            echo" <br /></p>                        
+                            echo'<div class="d-flex"><img src="'.$resChat['img_user'].'" alt="" width="30" height="30" class=""><h3 class="my-auto">'.$resChat['pseudo'].'</h3> <span class="my-auto date-heure"> '.$resChat['date'].' '.$resChat['heure'].' </span></div>';
+                            echo ' ';
+                            echo '<p class="message">'. $resChat['message_user'].'</p>';
+                            echo " <br /></div>                        
                                 <div class='clear'></div> 
                                 </div>";
                         };//fin de la boucle
             ?> 
                 <div class="reponse-visiteur d-flex" >
-                    <img src="img-visiteur.png" alt="miniature" width="30" height="30">    
+                    <img src="img/img-visiteur.png" alt="miniature" width="30" height="30">    
                     <p class="affichage-reponse" id="rep-visiteur">
                             <?php
                             include 'functions.php';

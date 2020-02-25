@@ -55,7 +55,7 @@ try {
                 </div>
             </div>
             <div class="input-visiteur">
-                    <form action="" method="GET">
+                    <form action="functions.php" method="GET">
                         <input type="text" name="reponseVisiteur" placeholder="votre réponse">
                         <button type="submit" onclick="reponseVisiteur()">Envoyer</button> 
                         <!-- A cause du button submit,  la page est rechargée.... -->

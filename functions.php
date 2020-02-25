@@ -7,15 +7,22 @@ try {
     print "Erreur !: " . $e->getMessage() . "<br/>";
     die();
 };
-if(isset($_GET['reponseVisiteur'])){
-     echo $_GET['reponseVisiteur'] ;
-    $reponseVisiteur = $_GET['reponseVisiteur'];
-        $tab = array(
-            'id' => '',
-            'message'=>$reponseVisiteur);
-        $sqlAjoutMsg ="INSERT INTO reponsevisiteur VALUES(:id, :message)";
-        $reqAjoutMsg = $dbh->prepare($sqlAjoutMsg);
-        $reqAjoutMsg ->execute($tab);
+if(isset($_GET['texteVisiteur'])){
+     echo $_GET['texteVisiteur'] ;
+    $reponseVisiteur = $_GET['texteVisiteur'];
+    $tab = array(
+        'id_message' => '',
+        'message_user'=>$reponseVisiteur,
+        'date' =>'date("Y-m-d"); ',
+        'heure'=>'date( "H:i:s")',
+        'id_user' =>'1');
+    $sqlAjoutMsg ="INSERT INTO message VALUES(:id_message, :message_user,:date,:heure,:id_user)";
+    $reqAjoutMsg = $dbh->prepare($sqlAjoutMsg);
+    $reqAjoutMsg ->execute($tab);
     }
-// echo $_GET['reponseVisiteur'] ;
+// date = NOW();
+
 ?>
+<p>TEST !!!!
+   <?php $_GET['texteVisiteur'] ?>
+</p>

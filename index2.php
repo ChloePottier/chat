@@ -31,7 +31,6 @@ try {
                 INNER JOIN user
                 ON message.id_user = user.id
                 ORDER BY message.id_message";
-                // $sqlChat ="SELECT * FROM discussion WHERE id = 1;";
                         $reqChat = $dbh->query($sqlChat);
                         while($resChat=$reqChat->fetch(PDO::FETCH_ASSOC)){
                     ?>
@@ -51,44 +50,43 @@ try {
                         };//fin de la boucle
             ?> 
                 <div class="reponse-visiteur d-flex" >
-                    <img src="img/img-visiteur.png" alt="miniature" width="30" height="30">    
+                    <img src="img/visiteur.png" alt="miniature" width="30" height="30">    
                     <p class="affichage-reponse" id="rep-visiteur">
-                            <?php
-                            include 'functions.php';
-                            ?>
+                            
                     </p>  
                 </div>
             </div>
             <div class="input-visiteur">
-                    <form action="" method="GET">
-                        <input type="text" name="reponseVisiteur" placeholder="votre réponse">
+                <form action="functions.php" method="GET" id="myForm">
+                        <!-- <input type="text" name="pseudo" placeholder="Votre pseudo"> -->
+                        <textarea type="text" name="texteVisiteur" placeholder="votre réponse"></textarea>
                         <button type="submit" onclick="reponseVisiteur()">Envoyer</button> 
-                        <!-- A cause du button submit,  la page est rechargée.... -->
                     </form>
                     <div class="clear"></div>
              </div>
-             <!-- <div class="input-visiteur">
 
-                        <button type="button" onclick="reponseVisiteur()">Envoyer</button>
-
-             </div> -->
         </div>
         </div>
     </div>
 
     <script>
 function reponseVisiteur() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("rep-visiteur").innerHTML =
-      this.responseText;
-    }
-  };
-  xhttp.open("GET", "functions.php", true);
-//   xhttp.open("GET", "mission.txt", true);
-  xhttp.send();
-}
+    //desactiver le rechargeement de la page, mais n'envoie plus les paramètres à functions.php, c'est ajax qui as les données
+    event.preventDefault("submit");
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("rep-visiteur").innerHTML = this.responseText;
+        };
+    };
+    xhttp.open("GET", "functions.php", true);
+    xhttp.send();
+    console.log(document.getElementById("rep-visiteur"));
+    //effacer ce qui est dans textarea après envoie
+    document.querySelector('textarea').value = '';
+};
+
 </script>
+
 </body>
 </html>

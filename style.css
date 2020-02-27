@@ -4,17 +4,39 @@ body{font-family: Arial, Helvetica, sans-serif;}
 img{padding: .3rem;}
 .d-flex{display: flex;}
 .flex-row{flex-direction: row;}
+.flex-column{flex-direction: column;}
+.justify-content-end{justify-content : end;}
 .align-items-end{align-items : flex-end;}
-h1{color: white; text-align: center; margin: auto;}
+h1{text-align: center; margin: auto; font-family: 'BebasNeue', Arial, Helvetica, sans-serif; letter-spacing: 1px;}
 h3,p{margin:0;}
+.text-white{color:#fff;}
 .header-container{box-shadow: 0 5px 5px #1e4548; z-index: 1000;}
 .zone-chat{background: #fff; height: 75%; border-left: solid 1px #5fc6cd;  border-right: solid 1px #5fc6cd; overflow:auto;}
-.reponse-visiteur{float: right; width:50%; border-radius: .3rem; background: #5fc6cd;  margin-top: 5px; margin-bottom: 5px;}
-.input-visiteur{float: right;}
-form{float:right; padding-top: 10px;}
+.reponse-idSession{float: right; width:70%; border-radius: .3rem; background: #5fc6cd;  margin-top: 5px; margin-bottom: 5px; margin-right: 5px; }
+.reponse-autres{float:left; width:70%; border-radius: .3rem; background: #ededed;  margin-top: 5px; margin-bottom: 5px; margin-left: 5px;}
+#myForm{padding-top: 10px;}
 .clear{clear:both; }
 .float-left{float: left;}
 .float-right{float: right;}
-.my-auto{margin-top:auto; }
+.my-auto{margin-top:auto; margin-bottom: auto;}
+.mt-auto{margin-top:auto; }
+.mt-20{margin-top: 20px;}
+.mb-5{margin-bottom: 5px;}
+.mx-auto{margin-left:auto; margin-right: auto;}
 .date-heure{padding-left: 0.3rem; font-size: .8rem;}
 .message{padding-left: 3rem;}
+#formConnection{width: 20rem;}
+.text-center{text-align: center;}
+textarea{border-radius: .3rem; border: none; width: 20rem; margin-right: .3rem; font-family: Arial, Helvetica, sans-serif; padding: .3rem ;}
+input{border-radius: .3rem; border: none; padding: .7rem; }
+.utilisateurDit{ margin-right:.3rem;}
+::placeholder{font-family: Arial, Helvetica, sans-serif;  color: #1e4548;}
+#envoi,#btnConnexion{border-radius: .3rem; background-color: #1e4548;  border: none; 
+    font-weight: 600; padding: .7rem; margin-top: .3rem; margin-right: .3rem; text-transform: uppercase; Cursor : pointer; }
+#envoi:hover,#btnConnexion:hover{background-color: #236b6d;}
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('font/BebasNeue-Regular.otf') format('otf'),
+        url('font/BebasNeue-Regular.woff') format('woff'),
+        url('font/BebasNeue-Regular.woff2') format('woff2'),
+        url('font/BebasNeue-Regular.ttf') format('ttf');}

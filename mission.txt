@@ -1,7 +1,0 @@
-Créer un chat en ligne avec gestion des nouveaux enregistrements en temps réel.
-
-Mission : 
-- Créer une BDD avec tous les enregistrements.
-- Sur index, afficher tous les enregistrements
-- Sur index, une zone ajout enregistrement
-- Sur index, Quand on ajoute qqc, mise à jour de la liste affichée en temps réel.

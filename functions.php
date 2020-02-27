@@ -15,7 +15,6 @@ if(isset($_POST['message'])){
     echo $idSession;
     $date =  date('Y-m-d') ;
     $heure = date('H:i:s');
-    // $reponseVisiteur = $_POST['texteVisiteur'];
     $reponseVisiteur = $_POST['message'];
     $tab = array(
         'id_message' => '',
@@ -27,6 +26,5 @@ if(isset($_POST['message'])){
     $reqAjoutMsg = $dbh->prepare($sqlAjoutMsg);
     $reqAjoutMsg ->execute($tab);
     }
-// date = NOW();
 
 ?>

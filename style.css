@@ -6,10 +6,12 @@ img{padding: .3rem;}
 .flex-row{flex-direction: row;}
 .flex-column{flex-direction: column;}
 .justify-content-end{justify-content : end;}
+.justify-content-between{justify-content: space-between ;}
 .align-items-end{align-items : flex-end;}
 h1{text-align: center; margin: auto; font-family: 'BebasNeue', Arial, Helvetica, sans-serif; letter-spacing: 1px; font-size: 3rem;}
 h3,p{margin:0;}
 .text-white{color:#fff;}
+.text-red{color:#a80e2f;}
 .compteInscription{color:#fff; font-weight: 600;}
 .compteInscription:hover{color: #1e4548;}
 .header-container{box-shadow: 0 5px 5px #1e4548; z-index: 1000;}
@@ -17,7 +19,7 @@ h3,p{margin:0;}
 .bullesMsg:hover{background: url(img/bulles-conversation-hover.svg) no-repeat;}
 .deconnection{ background: url(img/deconnection.svg) no-repeat; width:40px; height:40px; padding-right: .3rem;}
 .deconnection:hover{background:url(img/deconnection-hover.svg) no-repeat;}
-.zone-chat{background: #fff; height: 75%; border-left: solid 1px #5fc6cd;  border-right: solid 1px #5fc6cd; overflow:auto;}
+.zone-chat{background: #fff; height: 72%; border-left: solid 1px #5fc6cd;  border-right: solid 1px #5fc6cd; overflow:auto;}
 .reponse-idSession{float: right; width:70%; border-radius: .3rem; background: #5fc6cd;  margin-top: 5px; margin-bottom: 5px; margin-right: 5px; }
 .reponse-autres{float:left; width:70%; border-radius: .3rem; background: #ededed;  margin-top: 5px; margin-bottom: 5px; margin-left: 5px;}
 #myForm{padding-top: 10px;}
@@ -38,10 +40,14 @@ textarea{border-radius: .3rem; border: none; width: 20rem; margin-right: .3rem; 
 input{border-radius: .3rem; border: none; padding: .7rem; }
 .utilisateurDit{ margin-right:.3rem;}
 ::placeholder{font-family: Arial, Helvetica, sans-serif;  color: #1e4548;}
-#envoi,#btnConnexion,#btnInscription{border-radius: .3rem; background-color: #1e4548;  border: none; 
+#envoi,#btnConnexion,#btnInscription,.btnModif{border-radius: .3rem; background-color: #1e4548;  border: none; 
     font-weight: 600; padding: .7rem; margin-top: .3rem; margin-right: .3rem; text-transform: uppercase; Cursor : pointer; }
-#envoi:hover,#btnConnexion:hover,#btnInscription:hover{background-color: #236b6d;}
+#envoi:hover,#btnConnexion:hover,#btnInscription:hover,.btnModif:hover{background-color: #236b6d;}
 .inscription{width:75%;}
+.settings{width: 40px; height:40px; background: url(img/settings.svg) no-repeat; margin-left: .3rem; margin-top: .3rem;}
+.settings:hover{background: url(img/settings-hover.svg) no-repeat; }
+.setProfil h2{font-family: 'BebasNeue', Arial, Helvetica, sans-serif; font-size: 2rem; letter-spacing: 1px;}
+.modifPseudo,.modifPwd,.modifEmail{margin-left: 2rem;}
 
 @font-face {
     font-family: 'BebasNeue';

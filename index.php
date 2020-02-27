@@ -21,6 +21,7 @@ if (!isset($_SESSION["id"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Création d'un chat ligne avec réponse en temps réel après envoie de la réponse (bouton submit). ">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <title>Chat en ligne</title>
 </head>
@@ -39,9 +40,9 @@ if (!isset($_SESSION["id"])) {
                         <?php
                         $sessionId = $_SESSION["id"];
                         $sqlChat = "SELECT * FROM message 
-                    INNER JOIN user
-                    ON message.id_user = user.id
-                    ORDER BY message.id_message ASC ";
+                        INNER JOIN user
+                        ON message.id_user = user.id
+                        ORDER BY message.id_message ASC ";
                         $reqChat = $dbh->query($sqlChat);
                         while ($resChat = $reqChat->fetch(PDO::FETCH_ASSOC)) {
                             if ($resChat['id'] != $sessionId) {
@@ -69,27 +70,30 @@ if (!isset($_SESSION["id"])) {
                 </div>
             </div>
             <!--fin zone de chat-->
-            <div class="input-visiteur">
-                <form action="functions.php" method="POST" id="myForm" class="">
-                    <div class="d-flex justify-content-end">
-                        <?php if (isset($_SESSION["name"])) {
-                            $valeurchamp = $_SESSION["name"];
-                            $valeurchampId = $_SESSION["id"];
-                            echo "<span class='utilisateurDit text-white'>" . $valeurchamp . " dit : </span>";
-                        } else {
-                            $valeurchamp = "";
-                            $valeurchampId = "";
-                        } ?>
-                        <input hidden type="text" name="pseudo" id="pseudo" value="<?php echo $valeurchamp; ?>" disabled="disabled" /><br />
-                        <input hidden type="text" name="identifiant" id="identifiant" value="<?php echo $valeurchampId; ?>" /><br />
-                        <textarea type="text" name="message" id="message" placeholder=" votre message"></textarea>
-                    </div>
-                    <button type="submit" name="submit" id="envoi" class="float-right text-white">Envoyer</button>
-                    <!-- <textarea type="text" name="texteVisiteur" placeholder="votre message"></textarea> -->
-                    <!-- <button type="submit" name="submit" onclick="reponseVisiteur()">Envoyer</button>  -->
-                    <div class="clear"></div>
-                </form>
-                <!-- <div class="clear"></div> -->
+            <div class="footerMessage d-flex justify-content-between">
+                <div class=" d-flex"><a href="parametres.php" class="settings"></a></div>
+                <!-- ZOne write message -->
+                <div class="input-visiteur ">
+                    <form action="functions.php" method="POST" id="myForm" class="">
+                        <div class="d-flex justify-content-end">
+                            <?php if (isset($_SESSION["name"])) {
+                                $valeurchamp = $_SESSION["name"];
+                                $valeurchampId = $_SESSION["id"];
+                                echo "<span class='utilisateurDit text-white'>" . $valeurchamp . " dit : </span>";
+                            } else {
+                                $valeurchamp = "";
+                                $valeurchampId = "";
+                            } ?>
+                            <input hidden type="text" name="pseudo" id="pseudo" value="<?php echo $valeurchamp; ?>" disabled="disabled" /><br />
+                            <input hidden type="text" name="identifiant" id="identifiant" value="<?php echo $valeurchampId; ?>" /><br />
+                            <textarea type="text" name="message" id="message" placeholder=" votre message"></textarea>
+                        </div>
+                        <button type="submit" name="submit" id="envoi" class="float-right text-white">Envoyer</button>
+                        <!-- <textarea type="text" name="texteVisiteur" placeholder="votre message"></textarea> -->
+                        <!-- <button type="submit" name="submit" onclick="reponseVisiteur()">Envoyer</button>  -->
+                        <div class="clear"></div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -118,6 +122,7 @@ if (!isset($_SESSION["id"])) {
         //fonction en envoie message à ajax et à la page de taitement
         $('#envoi').click(function(e) {
             e.preventDefault(); // on empêche le bouton d'envoyer le formulaire
+            //La zone de message, doit toujours être scrollée sur le dernier message
             element = document.getElementById('messages');
             element.scrollTop = element.scrollHeight;
             var pseudo = encodeURIComponent($('#pseudo').val()); // on sécurise les données
@@ -137,8 +142,6 @@ if (!isset($_SESSION["id"])) {
 
         function charger() {
             setTimeout(function() {
-                //quand un message arrive, la fenêtre descent automatiquement au dernier message
-
                 var premierID = $('#messages p:last').attr('id'); // on récupère l'id le plus récent, donc le dernier de tous mes p générés
                 //alert (premierID);
                 $.ajax({

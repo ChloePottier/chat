@@ -7,10 +7,16 @@ img{padding: .3rem;}
 .flex-column{flex-direction: column;}
 .justify-content-end{justify-content : end;}
 .align-items-end{align-items : flex-end;}
-h1{text-align: center; margin: auto; font-family: 'BebasNeue', Arial, Helvetica, sans-serif; letter-spacing: 1px;}
+h1{text-align: center; margin: auto; font-family: 'BebasNeue', Arial, Helvetica, sans-serif; letter-spacing: 1px; font-size: 3rem;}
 h3,p{margin:0;}
 .text-white{color:#fff;}
+.compteInscription{color:#fff; font-weight: 600;}
+.compteInscription:hover{color: #1e4548;}
 .header-container{box-shadow: 0 5px 5px #1e4548; z-index: 1000;}
+.bullesMsg{width: 80px; height: 62.24px; background: url(img/bulles-conversation.svg) no-repeat;  margin: .3rem;}
+.bullesMsg:hover{background: url(img/bulles-conversation-hover.svg) no-repeat;}
+.deconnection{ background: url(img/deconnection.svg) no-repeat; width:40px; height:40px; padding-right: .3rem;}
+.deconnection:hover{background:url(img/deconnection-hover.svg) no-repeat;}
 .zone-chat{background: #fff; height: 75%; border-left: solid 1px #5fc6cd;  border-right: solid 1px #5fc6cd; overflow:auto;}
 .reponse-idSession{float: right; width:70%; border-radius: .3rem; background: #5fc6cd;  margin-top: 5px; margin-bottom: 5px; margin-right: 5px; }
 .reponse-autres{float:left; width:70%; border-radius: .3rem; background: #ededed;  margin-top: 5px; margin-bottom: 5px; margin-left: 5px;}
@@ -18,11 +24,12 @@ h3,p{margin:0;}
 .clear{clear:both; }
 .float-left{float: left;}
 .float-right{float: right;}
+.mx-auto{margin-left:auto; margin-right: auto;}
 .my-auto{margin-top:auto; margin-bottom: auto;}
 .mt-auto{margin-top:auto; }
 .mt-20{margin-top: 20px;}
 .mb-5{margin-bottom: 5px;}
-.mx-auto{margin-left:auto; margin-right: auto;}
+.mb-16{margin-bottom: 1rem;}
 .date-heure{padding-left: 0.3rem; font-size: .8rem;}
 .message{padding-left: 3rem;}
 #formConnection{width: 20rem;}
@@ -31,9 +38,11 @@ textarea{border-radius: .3rem; border: none; width: 20rem; margin-right: .3rem; 
 input{border-radius: .3rem; border: none; padding: .7rem; }
 .utilisateurDit{ margin-right:.3rem;}
 ::placeholder{font-family: Arial, Helvetica, sans-serif;  color: #1e4548;}
-#envoi,#btnConnexion{border-radius: .3rem; background-color: #1e4548;  border: none; 
+#envoi,#btnConnexion,#btnInscription{border-radius: .3rem; background-color: #1e4548;  border: none; 
     font-weight: 600; padding: .7rem; margin-top: .3rem; margin-right: .3rem; text-transform: uppercase; Cursor : pointer; }
-#envoi:hover,#btnConnexion:hover{background-color: #236b6d;}
+#envoi:hover,#btnConnexion:hover,#btnInscription:hover{background-color: #236b6d;}
+.inscription{width:75%;}
+
 @font-face {
     font-family: 'BebasNeue';
     src: url('font/BebasNeue-Regular.otf') format('otf'),

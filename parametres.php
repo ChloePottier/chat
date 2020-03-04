@@ -31,7 +31,7 @@
                 print "Erreur !: " . $e->getMessage() . "<br/>";
                 die();
             }
-            $sqlProfil = "SELECT * FROM user ";
+            $sqlProfil = "SELECT * FROM user WHERE id=".$_SESSION["id"]."";
             $reqProfil = $dbh->query($sqlProfil);
             // ON SAUVEGARDE LES RESULTAT DANS UN TABLEAU
             $resProfil = $reqProfil->fetch(PDO::FETCH_ASSOC);
@@ -72,7 +72,7 @@
                         'email' => '',
                         'img_user' => ''
                     );
-                    $reqpseudo = $dbh->prepare("SELECT pseudo FROM user WHERE pseudo = ?");
+                    $reqpseudo = $dbh->prepare("SELECT pseudo FROM user WHERE id = ?");
                     $reqpseudo->execute(array($pseudo));
                     $pseudoexist = $reqpseudo->rowCount();
                         if ($pseudoexist > 0) {
